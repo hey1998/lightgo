@@ -2,6 +2,13 @@
 #include <event.h>
 #include <evhttp.h>
 
+void do_METHOD(struct evhttp_request *req, struct evbuffer *buf)
+{
+	struct evhttp_uri *uri = evhttp_request_get_evhttp_uri(const struct evhttp_request *req);
+	char *host = evhttp_uri_get_host(uri);
+	char *path = evhttp_uri_get_path(uri);
+}
+
 void GAEProxyHandler(struct evhttp_request *req, void *arg)
 {
 	struct evbuffer *buf;
